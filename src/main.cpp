@@ -105,7 +105,7 @@ unsigned long current_time_millis;
 
 void on_button_release(bool &var_to_change, unsigned long button_press_millis)
 {
-  // On Short press (50 -350 ms) flip USB port
+  // On Short press (25 -350 ms) flip USB port
   if (current_time_millis - button_press_millis >= ClickMinTime && current_time_millis - button_press_millis <= ClickMaxTime)
   {
 #ifdef F_DEBUG
@@ -288,6 +288,10 @@ void loop()
     usb_port_1_status = usb_port_1_set_status;
     digitalWrite(USB_PORT_1_PIN, usb_port_1_status ? HIGH : LOW);
     send(msgUSBPort1.set(usb_port_1_status ? 1 : 0), ack);
+#ifdef F_DEBUG
+    Serial.print("USB port 1 staus changed to ");
+    Serial.println(usb_port_1_status);
+#endif
   }
 #endif
 #ifdef CHILD_ID_USB_PORT_2
@@ -296,6 +300,10 @@ void loop()
     usb_port_2_status = usb_port_2_set_status;
     digitalWrite(USB_PORT_2_PIN, usb_port_2_status ? HIGH : LOW);
     send(msgUSBPort2.set(usb_port_2_status ? 1 : 0), ack);
+#ifdef F_DEBUG
+    Serial.print("USB port 2 staus changed to ");
+    Serial.println(usb_port_2_status);
+#endif
   }
 #endif
 #ifdef CHILD_ID_USB_PORT_3
@@ -304,6 +312,10 @@ void loop()
     usb_port_3_status = usb_port_3_set_status;
     digitalWrite(USB_PORT_3_PIN, usb_port_3_status ? HIGH : LOW);
     send(msgUSBPort3.set(usb_port_3_status ? 1 : 0), ack);
+#ifdef F_DEBUG
+    Serial.print("USB port 3 staus changed to ");
+    Serial.println(usb_port_3_status);
+#endif
   }
 #endif
 

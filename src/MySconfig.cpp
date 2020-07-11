@@ -22,7 +22,7 @@
 
 // Radio type definition: comment out the first line to configure a NRF24L01 radio module instead of RFM69
 
-#define MY_RADIO_RFM69
+//#define MY_RADIO_RFM69
 #ifdef MY_RADIO_RFM69
 #define MY_RFM69_NEW_DRIVER
 #define MY_IS_RFM69HW
