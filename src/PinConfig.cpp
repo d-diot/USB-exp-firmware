@@ -9,4 +9,4 @@ see MySConfig.cpp for IRQ and radio signaling led PIN definition
 #define SW1_PIN 18
 #define SW2_PIN 19
 #define SW3_PIN 17
-#define PWR_LED_PIN 8 // if present on the main board
+//#define PWR_LED_PIN 8 // if present on the main board
